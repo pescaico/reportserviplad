@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="099ae2b2-dd5c-443d-859f-b940b1e24bc5">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="17"/>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<subDataset name="dataset1" uuid="65347e8d-1cd3-4ded-a876-6cf6dad4e64a"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<image>
+				<reportElement x="300" y="1" width="254" height="70" uuid="9d3e8834-ee37-4341-b50d-d3003d103598"/>
+				<imageExpression><![CDATA["C:\\Users\\gaxp\\Desktop\\temporal sp\\logoFactura.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="0" width="248" height="79" uuid="88f991f0-9fe0-4b65-acff-ce78ed8b6498"/>
+				<textElement>
+					<font fontName="Verdana" isBold="false"/>
+					<paragraph tabStopWidth="4">
+						<tabStop position="70" alignment="Right"/>
+					</paragraph>
+				</textElement>
+				<text><![CDATA[SERVICIOS PLADUR, C.B.
+Jose Hernández Estevan
+Pablo Navarro Navarro
+	CIF:	E-54714720
+	TELF:	626 705 792 / 679 398 496
+	DIRECCIÓN:	03400 Villena (Alicante)
+]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="331" y="84" width="223" height="20" uuid="9e95f406-34b1-4894-87b2-6b4dff8af7f5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Fecha: " + 
+new SimpleDateFormat(
+"EEEE d 'de' MMMM 'de' yyyy",
+ new Locale("es", "ES")).format(new Date()).toUpperCase()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="15" width="100" height="20" uuid="a2905eac-ea2d-4fe0-b703-1fa9e1baf40a"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="35" width="100" height="20" uuid="ceb0c5cb-c9cb-4f8c-9b8a-597e29bf4e64"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="15" width="100" height="20" uuid="b7c828ae-b177-4187-8222-892d11882d3b"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="35" width="100" height="20" uuid="66e7f445-6a6a-4940-8474-d7c50eef0fa2"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="103" width="364" height="20" uuid="b7ed8698-b2b0-43db-bed9-4544e50a530b"/>
+				<textFieldExpression><![CDATA[$F{nombreCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="102" width="100" height="20" uuid="44e926d8-a42d-4943-b077-6156e4629390"/>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="121" width="100" height="20" uuid="0aca6a34-f666-4176-a9b3-527ccf818fb2"/>
+				<text><![CDATA[CIF/NIF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="121" width="364" height="20" uuid="aa03e02c-200b-4df0-bb48-633948673427"/>
+				<textFieldExpression><![CDATA[$F{cifCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="140" width="100" height="20" uuid="e43a7b09-3162-4519-9567-bff01b21fba4"/>
+				<text><![CDATA[TELF:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="115" y="140" width="364" height="20" uuid="13692b57-1fa9-417d-b50f-90f0fc0a50c8"/>
+				<textFieldExpression><![CDATA[$F{field}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="159" width="364" height="20" uuid="e22f451c-8514-4966-b022-5e8c5a49c655"/>
+				<textFieldExpression><![CDATA[$F{direccionCliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="159" width="100" height="20" uuid="4ffea700-120c-4c6b-b411-121ac66675e6"/>
+				<text><![CDATA[DIRECCIÓN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="82" width="464" height="20" uuid="c4e4ef41-96b3-46cb-8360-150fdf077a96"/>
+				<text><![CDATA[DATOS CLIENTE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="15" y="16" width="100" height="20" uuid="5af5d61e-6058-4a01-a088-38a0b2a5943d"/>
+				<textFieldExpression><![CDATA[$F{campo1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="16" width="100" height="20" uuid="794581cf-1a42-4888-afb4-132fc939eec6"/>
+				<textFieldExpression><![CDATA[$F{campo2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="16" width="100" height="20" uuid="9cf04a09-25c6-4a05-965c-04ac3f339b54"/>
+				<textFieldExpression><![CDATA[$F{campo3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="27" y="47" width="517" height="1" uuid="eccdc1ec-4ad1-4f9a-ad6d-a541ebe3b161"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
